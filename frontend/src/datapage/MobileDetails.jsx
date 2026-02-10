@@ -44,17 +44,17 @@ export default function MobileDetails() {
     <>
       <Navbar />
 
-      <div className="bg-green-50">
+      <div className="bg-blue-50">
         <section className="max-w-7xl mx-auto px-4 sm:px-6 py-20">
 
           {/* PAGE HEADING */}
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <span className="bg-green-100 text-green-700 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm">
+            <span className="bg-green-100 text-blue-700 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm">
               Mobile Applications
             </span>
             <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mt-4 mb-6 leading-tight">
               Smart, Secure & Simple <br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-teal-500">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-700 ">
                 Chit Fund Mobile Apps
               </span>
             </h1>
@@ -86,7 +86,7 @@ export default function MobileDetails() {
                       className="flex items-start gap-4 group"
                     >
                       <div className="mt-1">
-                        <CheckCircle className="text-green-500 w-6 h-6 group-hover:scale-110 transition-transform duration-200" strokeWidth={2.5} />
+                        <CheckCircle className="text-blue-500 w-6 h-6 group-hover:scale-110 transition-transform duration-200" strokeWidth={2.5} />
                       </div>
                       <span className="text-gray-600 text-base leading-relaxed font-medium">
                         {text}
@@ -116,7 +116,7 @@ export default function MobileDetails() {
 
 
           {/* Final CTA Section */}
-          <div className="mt-28 text-center max-w-4xl mx-auto rounded-3xl shadow-xl p-12 border border-green-100 relative overflow-hidden">
+          <div className="mt-28 text-center max-w-4xl mx-auto rounded-3xl shadow-xl p-12 border border-blue-100 relative overflow-hidden">
              {/* Decorative circle */}
              <div className="absolute top-0 right-0 w-64 h-64 bg-teal-50 rounded-full mix-blend-multiply filter blur-3xl opacity-60 translate-x-1/2 -translate-y-1/2"></div>
 
@@ -129,7 +129,7 @@ export default function MobileDetails() {
             </p>
             <a
               href="/signup"
-              className="inline-flex items-center px-10 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-bold rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 transform relative z-10"
+              className="inline-flex items-center px-10 py-4 bg-gradient-to-r from-blue-600 to-indigo-700  text-white font-bold rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 transform relative z-10"
             >
               Start Your Free Demo
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>

@@ -196,28 +196,42 @@ export default function FeatureDetails() {
           ))}
 
           {/* Final CTA Section */}
-          <div className="mt-32 text-center max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl p-12 border border-green-100 relative overflow-hidden">
-             {/* Decorative circle */}
-             <div className="absolute top-0 left-0 w-64 h-64 bg-green-50 rounded-full mix-blend-multiply filter blur-3xl opacity-60 -translate-x-1/2 -translate-y-1/2"></div>
+          <div className="mt-28 text-center max-w-4xl mx-auto rounded-3xl shadow-xl p-12 border border-blue-100 relative overflow-hidden">
+    <div className="absolute top-0 right-0 w-64 h-64 bg-teal-50 rounded-full mix-blend-multiply filter blur-3xl opacity-60 translate-x-1/2 -translate-y-1/2"></div>
+    <div className="absolute bottom-0 left-0 w-48 h-48 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-50 -translate-x-1/2 translate-y-1/2"></div>
 
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 relative z-10">
-              Everything You Need to Run a Smarter Chit Fund Business
-            </h3>
-            <p className="text-gray-600 mb-10 text-lg leading-relaxed max-w-2xl mx-auto relative z-10">
-              From group management to auction handling, financial tracking to compliance — our all-in-one platform automates what matters most.
-              <strong className="block text-gray-900 mt-2">No more spreadsheets. No more manual errors. Just seamless, scalable growth.</strong>
-            </p>
-            <a
-              href="/signup"
-              className="inline-flex items-center px-10 py-4 bg-gradient-to-r from-blue-600 to-indigo-700  text-white font-bold rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 transform relative z-10"
-            >
-              Start Your Free Demo
-              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
-            </a>
-            <p className="mt-6 text-sm text-gray-500 font-medium relative z-10">
-              Zero setup • Real-time sync • Dedicated onboarding support
-            </p>
-          </div>
+    {/* Icon */}
+    <div className="relative z-10 mb-6">
+        <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-2xl mx-auto">
+            <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+            </svg>
+        </div>
+    </div>
+
+    <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 relative z-10">
+        All-in-One Chit Fund Management Solution
+    </h3>
+    
+    <p className="text-gray-600 mb-10 text-lg leading-relaxed max-w-2xl mx-auto relative z-10">
+        Discover how our platform can transform your chit fund operations with powerful features designed for growth and efficiency.
+        <strong className="block text-gray-900 mt-2">Manage everything from a single dashboard — no more spreadsheets or manual calculations.</strong>
+    </p>
+    
+    <a
+        href="/signup"
+        className="inline-flex items-center px-10 py-4 bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-bold rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 transform relative z-10 group"
+    >
+        See Features in Action
+        <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+        </svg>
+    </a>
+    
+    <p className="mt-6 text-sm text-gray-500 font-medium relative z-10">
+        Free Demo Available • Customizable Modules • Enterprise-Ready
+    </p>
+</div>
         </section>
       </div>
 

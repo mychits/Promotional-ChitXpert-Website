@@ -25,8 +25,8 @@ export default function Hero() {
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
-              Next-Gen Chit Fund <br />
+            <h1 className="text-4xl lg:text-6xl font-extrabold text-blue-600 leading-tight mb-5">
+              Next-Gen ChitXpert<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700">
                 Management Platform
               </span>
@@ -63,12 +63,12 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="/signup"
-                className="inline-flex justify-center items-center px-8 py-4 bg-green-600 text-white font-bold rounded-lg shadow-lg hover:bg-red-700 transition-all transform hover:-translate-y-1 hover:shadow-xl"
+                className="inline-flex justify-center items-center px-8 py-4 bg-blue-600 text-white font-bold rounded-lg shadow-lg hover:bg-green-700 transition-all transform hover:-translate-y-1 hover:shadow-xl"
               >
                 Book Free Demo <ArrowRight className="ml-2 w-5 h-5" />
               </a>
 
-              <button className="inline-flex justify-center items-center px-8 py-4 bg-white text-slate-700 font-bold rounded-lg border border-slate-200 hover:border-red-300 hover:text-red-600 transition-all">
+              <button className="inline-flex justify-center items-center px-8 py-4 bg-white text-slate-700 font-bold rounded-lg border border-slate-200 hover:border-blue-300 hover:text-blue-600 transition-all">
                 <PlayCircle className="mr-2 w-5 h-5" /> Watch Video
               </button>
             </div>

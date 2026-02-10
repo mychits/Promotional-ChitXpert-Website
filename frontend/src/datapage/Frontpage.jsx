@@ -18,11 +18,13 @@ import AgentApp from "../components/AgentApp";
 import FAQ from "../components/FAQ";
 import Reports from "../components/Reports";
 import FeatureHighlights from "../components/FeatureHighlights";
+import ScrollingPopup from "../components/Popup";
 
 
 export default function Home() {
   return (
     <>
+    
       <Navbar />
       <Hero />
       <HeroBanner />
@@ -30,6 +32,7 @@ export default function Home() {
        <Floatingdemo />
       <FloatingWhatsApp />
       <AboutSection />
+      <ScrollingPopup />
        <Feature/>
        <ReasonsSection/>
        <HowItWorks/>
