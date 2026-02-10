@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Smile, Smartphone, Star, Monitor, Users } from "lucide-react";
 
@@ -6,8 +5,8 @@ export default function FeatureHighlights() {
   const features = [
     { icon: Smile, title: "1 Lakh+ Happy Customers" },
     { icon: Smartphone, title: "Free Mobile App" },
-    { icon: Star, title: "Rated 4.7/5 on Google Play" },
-    { icon: Monitor, title: "Multi-Device Access", subtitle: "Mobile & Desktop" },
+    { icon: Star, title: "Rated 4.6/5 on Google Play" },
+    { icon: Monitor, title: "Multi-Device Access"  },
     { icon: Users, title: "Multi-User Management" },
   ];
 
@@ -20,7 +19,7 @@ export default function FeatureHighlights() {
           : '' // Natural sizing for grid
       }`}
     >
-      <div className="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center text-blue-600 transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white group-hover:scale-110 shadow-sm">
+      <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-yellow-600 transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white group-hover:scale-110 shadow-sm">
         <feature.icon size={32} strokeWidth={1.5} />
       </div>
       <div className="mt-3">
@@ -39,6 +38,18 @@ export default function FeatureHighlights() {
   return (
     <section className="py-12 bg-white border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* HEADING SECTION */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Everything You Need to Run Your Chit Fund Business
+          </h2>
+          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+            Trusted by thousands of chit fund businesses across India. 
+            Our comprehensive platform simplifies operations, enhances customer experience, 
+            and drives growth with powerful features designed specifically for chit fund management.
+          </p>
+        </div>
+
         {/* MOBILE: Horizontal scroll container (visible < md) */}
         <div 
           className="block md:hidden overflow-x-auto py-2 scrollbar-hide"
@@ -78,4 +89,5 @@ export default function FeatureHighlights() {
       `}</style>
     </section>
   );
+
 }

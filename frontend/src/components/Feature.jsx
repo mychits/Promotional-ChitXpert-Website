@@ -1,9 +1,19 @@
 import React from "react";
+// import bgImg from "../assets/images/6.png";
 
 
 export default function Feature() {
   return (
-    <section className="bg-blue-50 py-20">
+    <section className=" bg-blue-50 py-20" 
+    style={{
+        backgroundImage: "url('../assets/images/6.png')",
+        //  backgroundImage: `url(${bgImg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+         backgroundRepeat: "no-repeat",
+
+     }} 
+     >
       <div className="max-w-7xl mx-auto px-6">
 
         {/* ROW 1 */}

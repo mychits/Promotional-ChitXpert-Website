@@ -19,6 +19,7 @@ import FAQ from "../components/FAQ";
 import Reports from "../components/Reports";
 import FeatureHighlights from "../components/FeatureHighlights";
 import ScrollingPopup from "../components/Popup";
+import FeatureComparisonTable from "../components/FeatureComparisonTable";
 
 
 export default function Home() {
@@ -33,6 +34,7 @@ export default function Home() {
       <FloatingWhatsApp />
       <AboutSection />
       <ScrollingPopup />
+      <FeatureComparisonTable/>
        <Feature/>
        <ReasonsSection/>
        <HowItWorks/>
