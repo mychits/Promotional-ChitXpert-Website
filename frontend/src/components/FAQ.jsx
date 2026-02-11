@@ -77,7 +77,7 @@ export default function FAQ() {
             Frequently Asked <span className="text-blue-600">Questions</span>
           </h2>
           <p className="text-gray-600 mb-6">
-            Everything you need to know about the product and billing.
+            Everything you need to know about the product and billing.    
           </p>
 
           {/* <button className="bg-blue-600 text-white px-5 py-2 rounded-md">
