@@ -42,15 +42,15 @@ const TermsConditions = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-blue-100">
       <div className="mx-auto max-w-5xl px-4 py-6">
         <h1 className="mb-6 text-center text-2xl font-bold text-[#053B90]">
           Terms & Conditions and Privacy Policy for My Chit
         </h1>
 
         {/* Why Read */}
-        <div className="mb-6 rounded-xl border-l-4 border-green-500 bg-green-50 p-5 shadow-md">
-          <h3 className="mb-4 text-center text-xl font-bold text-green-700">
+        <div className="mb-6 rounded-xl border-l-4 border-blue-500 bg-green-50 p-5 shadow-md">
+          <h3 className="mb-4 text-center text-xl font-bold text-blue-700">
             Why Customers Must Read Them All
           </h3>
 

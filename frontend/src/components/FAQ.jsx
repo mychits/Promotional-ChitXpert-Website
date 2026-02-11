@@ -74,7 +74,7 @@ export default function FAQ() {
         {/* LEFT CONTENT */}
         <div>
           <h2 className="text-3xl font-bold mb-4">
-            Frequently Asked <span className="text-green-600">Questions</span>
+            Frequently Asked <span className="text-blue-600">Questions</span>
           </h2>
           <p className="text-gray-600 mb-6">
             Everything you need to know about the product and billing.

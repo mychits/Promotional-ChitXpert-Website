@@ -45,12 +45,6 @@ export default function Home() {
         <AgentApp/>    
         <FAQ/>
       <Contact/>
-     
-      {/* <Plans/>
-      <Gold/>
-      <About/>
-      <WhyChooseUs/>
-      <Contact/> */}
       <Footer />
     </>
   );

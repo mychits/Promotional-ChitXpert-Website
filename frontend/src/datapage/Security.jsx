@@ -10,7 +10,7 @@ export default function Security() {
          <Navbar/>
       
       {/* Header */}
-      <div className="bg-green-500 text-white py-12">
+      <div className="bg-blue-500 text-white py-12">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h1 className="text-4xl font-extrabold">Security & Compliance</h1>
           <p className="mt-3 text-200 text-lg">

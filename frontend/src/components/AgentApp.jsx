@@ -4,7 +4,7 @@ import React from "react";
 
 export default function AgentApp() {
     return (
-        <section id="agentapp" className="py-08 bg-green-400 text-white">
+        <section id="agentapp" className="py-08 bg-blue-500 text-white">
             <div className="max-w-5xl mx-auto px-4">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
 

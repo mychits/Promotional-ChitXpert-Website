@@ -14,6 +14,7 @@ import Help from "./datapage/help&support"
 import Privacy from "./datapage/privacy";
 import TermsConditions from "./datapage/Term&Conditions";
 import Contact from "./datapage/contact";
+import AboutUs from "./datapage/Aboutus";
 
 
 
@@ -25,6 +26,7 @@ export default function App() {
         {/* <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} /> */}
         <Route path="/home" element={<Home />} />
+         <Route path="/aboutus" element={<AboutUs/>} />
         <Route path="/signup" element={<SignUp />} /> 
          <Route path="/features" element={<FeatureDetails />} />
           <Route path="/mobile" element={<MobileDetails />} />
@@ -36,6 +38,7 @@ export default function App() {
             <Route path="/termcondition" element={<TermsConditions/>} />
                              
             <Route path="/contact" element={<Contact/>} />
+           
 
 
           

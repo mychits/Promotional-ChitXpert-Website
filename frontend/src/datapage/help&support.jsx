@@ -46,7 +46,7 @@ ${form.message}
   };
 
  return (
-  <div className="bg-green-50 py-12 px-4 font-sans">
+  <div className="bg-blue-50 py-12 px-4 font-sans">
     {/* Page Title */}
     <h1 className="text-center text-3xl md:text-4xl font-bold text-[#053b90] mb-10">
       Help & Support
@@ -64,7 +64,7 @@ ${form.message}
             href={mapsUrl}
             target="_blank"
             rel="noreferrer"
-            className="flex gap-4 items-start p-4 bg-gray-50 rounded-lg border-l-4 border-orange-400 hover:bg-gray-100 transition"
+            className="flex gap-4 items-start p-4 bg-gray-50 rounded-lg border-l-4 border-blue-400 hover:bg-gray-100 transition"
           >
             <FaMapMarkerAlt className="text-[#053b90] mt-1 text-lg" />
             <span className="text-gray-700">{address}</span>
@@ -72,7 +72,7 @@ ${form.message}
 
           <a
             href="tel:+919483900777"
-            className="flex gap-4 items-center p-4 bg-gray-50 rounded-lg border-l-4 border-orange-400 hover:bg-gray-100 transition"
+            className="flex gap-4 items-center p-4 bg-gray-50 rounded-lg border-l-4 border-blue-400 hover:bg-gray-100 transition"
           >
             <FaPhoneAlt className="text-[#053b90]" />
             <span className="text-gray-700">+91 94839 00777</span>
@@ -80,7 +80,7 @@ ${form.message}
 
           <a
             href="mailto:info.mychits@gmail.com"
-            className="flex gap-4 items-center p-4 bg-gray-50 rounded-lg border-l-4 border-orange-400 hover:bg-gray-100 transition"
+            className="flex gap-4 items-center p-4 bg-gray-50 rounded-lg border-l-4 border-blue-400 hover:bg-gray-100 transition"
           >
             <FaEnvelope className="text-[#053b90]" />
             <span className="text-gray-700">info.mychits@gmail.com</span>
@@ -139,7 +139,7 @@ ${form.message}
             <button
               onClick={handleSubmit}
               className="mt-2 w-full py-3 rounded-xl font-semibold text-white bg-gradient-to-r
-                 from-green-600 to-teal-600 hover:opacity-90 transition"
+                 from-blue-600 to-purple-600 hover:opacity-90 transition"
             >
               Send Message
             </button>
