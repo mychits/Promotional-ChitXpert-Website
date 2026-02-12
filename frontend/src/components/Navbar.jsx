@@ -1,7 +1,24 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { ChevronDown, Menu, X, Globe, ArrowRight, ChevronRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import logo from "../assets/images/LOGOrbg.png";
+import logo from "../assets/images/logop.jpeg";
+import {
+    Users,
+    DollarSign,
+    TrendingUp,
+    CreditCard,
+    MessageSquare,
+    BarChart3,
+    User,
+    ShieldCheck,
+    Smartphone,
+    Calendar,
+    FileText,
+    Building2,
+    Banknote,
+    FileCheck,
+    Briefcase
+} from "lucide-react";
 
 export default function Navbar() {
     const [openTranslate, setOpenTranslate] = useState(false);
@@ -14,20 +31,6 @@ export default function Navbar() {
     });
     const [activeItem, setActiveItem] = useState(null);
     const { t } = useTranslation();
-    const timeoutRef = useRef(null);
-
-    // --- HOVER LOGIC ---
-    const handleMouseEnter = (menu) => {
-        clearTimeout(timeoutRef.current);
-        setOpenMenu(menu);
-    };
-
-    const handleMouseLeave = () => {
-        timeoutRef.current = setTimeout(() => {
-            setOpenMenu(null);
-            setActiveItem(null); // Clear active item when leaving the whole menu area
-        }, 200);
-    };
 
     // --- CLICK LOGIC ---
     // Toggle Main Menu (Features, Mobile, Reports)
@@ -67,7 +70,7 @@ export default function Navbar() {
         {
             id: "chit-group-management",
             label: "Chit Group Management",
-            icon: "📊",
+            icon: <BarChart3 size={18} className="text-blue-600" />,
             children: [
                 { id: "create-chit", label: "Create and manage multiple chit groups" },
                 { id: "assign-members", label: "Track group performance and auctions" },
@@ -76,7 +79,7 @@ export default function Navbar() {
         {
             id: "customer-management",
             label: "Customer Management",
-            icon: "👥",
+            icon: <Users size={18} className="text-green-600" />,
             children: [
                 { id: "add-customer", label: "Maintain secure profiles" },
                 { id: "kyc", label: "Automated reminders for payments" },
@@ -85,7 +88,7 @@ export default function Navbar() {
         {
             id: "auction-bid-handling",
             label: "Auction & Bid Handling",
-            icon: "💰",
+            icon: <DollarSign size={18} className="text-yellow-600" />,
             children: [
                 { id: "auction", label: "Automate auction events" },
                 { id: "biding", label: "Manage winners and discounts" },
@@ -94,7 +97,7 @@ export default function Navbar() {
         {
             id: "financial-management",
             label: "Accounts & Financial Mgmt",
-            icon: "📈",
+            icon: <TrendingUp size={18} className="text-purple-600" />,
             children: [
                 { id: "accounts", label: "Ledger entries and vouchers" },
                 { id: "financial", label: "Real-time financial updates" },
@@ -103,7 +106,7 @@ export default function Navbar() {
         {
             id: "Payment-Tracking",
             label: "Automated Collection & Payment Tracking",
-            icon: "💳",
+            icon: <CreditCard size={18} className="text-red-600" />,
             children: [
                 { id: "payments", label: "Online and offline collection tracking" },
                 { id: "collection", label: "Ensures transparency" },
@@ -112,7 +115,7 @@ export default function Navbar() {
         {
             id: "Communication-Tools",
             label: "Communication Tools",
-            icon: "📱",
+            icon: <MessageSquare size={18} className="text-indigo-600" />,
             children: [
                 { id: "sms", label: "SMS alerts for due payments" },
                 { id: "comm-tool", label: "Offline SMS support" },
@@ -121,7 +124,7 @@ export default function Navbar() {
         {
             id: "Reports-Analytics",
             label: "Reports & Analytics",
-            icon: "📊",
+            icon: <FileText size={18} className="text-orange-600" />,
             children: [
                 { id: "report", label: "Real-time pending lists" },
                 { id: "analytics", label: "Performance tracking" },
@@ -130,7 +133,7 @@ export default function Navbar() {
         {
             id: "Agent-Management",
             label: "Agent Management",
-            icon: "👤",
+            icon: <User size={18} className="text-pink-600" />,
             children: [
                 { id: "agent", label: "Track collections and attendance" },
                 { id: "finacial", label: "Assign tasks and monitor productivity" },
@@ -139,7 +142,7 @@ export default function Navbar() {
         {
             id: "Security-Compliance",
             label: "Security & Compliance",
-            icon: "🔒",
+            icon: <ShieldCheck size={18} className="text-gray-600" />,
             children: [
                 { id: "security", label: "Role-based access" },
                 { id: "complaince", label: "Regulatory standards" },
@@ -148,7 +151,7 @@ export default function Navbar() {
         {
             id: "Web-Mobile Access",
             label: "Web & Mobile Access",
-            icon: "💻",
+            icon: <Smartphone size={18} className="text-teal-600" />,
             children: [
                 { id: "webaccess", label: "Cloud-based access" },
                 { id: "mobileaccess", label: "Mobile apps for admins" },
@@ -160,7 +163,7 @@ export default function Navbar() {
         {
             id: "Agent-app",
             label: "Agent Fund App",
-            icon: "👨‍💼",
+            icon: <Briefcase size={18} className="text-blue-600" />,
             children: [
                 { id: "agent-app", label: "Manages customer details" },
                 { id: "agent-app-2", label: "Record monthly installments" },
@@ -169,7 +172,7 @@ export default function Navbar() {
         {
             id: "Customer-app",
             label: "Customer App",
-            icon: "👩‍💼",
+            icon: <Users size={18} className="text-green-600" />,
             children: [
                 { id: "Customer-app", label: "View joined chit groups" },
                 { id: "Customer-app-2", label: "Check installment due dates" },
@@ -181,7 +184,7 @@ export default function Navbar() {
         {
             id: "Daybook-Report",
             label: "Daybook Report",
-            icon: "📅",
+            icon: <Calendar size={18} className="text-blue-600" />,
             children: [
                 { id: "Daybook-Report", label: "Daily cash inflows and outflows" },
                 { id: "Daybook-Report-2", label: "Real-time transaction entries" },
@@ -190,7 +193,7 @@ export default function Navbar() {
         {
             id: "Payment-Reports",
             label: "Payment Reports",
-            icon: "💳",
+            icon: <CreditCard size={18} className="text-green-600" />,
             children: [
                 { id: "Payment-Reports", label: "Installment collections" },
                 { id: "Payment-Reports-2", label: "Pending and overdue installments" },
@@ -199,7 +202,7 @@ export default function Navbar() {
         {
             id: "Customer-Reports",
             label: "Customer Reports",
-            icon: "👥",
+            icon: <Users size={18} className="text-purple-600" />,
             children: [
                 { id: "Customer-Reports", label: "All registered customers" },
                 { id: "Customer-Reports-2", label: "Active and inactive accounts" },
@@ -208,7 +211,7 @@ export default function Navbar() {
         {
             id: "Auction-Reports",
             label: "Auction Reports",
-            icon: "💰",
+            icon: <DollarSign size={18} className="text-yellow-600" />,
             children: [
                 { id: "Auction-Reports", label: "Conducted chit auctions" },
                 { id: "Auction-Reports-2", label: "Bid amounts and winners" },
@@ -217,7 +220,7 @@ export default function Navbar() {
         {
             id: "Collection-Reports",
             label: "Collection Reports",
-            icon: "📊",
+            icon: <BarChart3 size={18} className="text-red-600" />,
             children: [
                 { id: "Collection-Reports", label: "Installment collections" },
                 { id: "Collection-Reports-2", label: "Agent-wise performance" },
@@ -226,7 +229,7 @@ export default function Navbar() {
         {
             id: "Sales-Lead Reports",
             label: "Sales & Lead Reports",
-            icon: "📈",
+            icon: <TrendingUp size={18} className="text-indigo-600" />,
             children: [
                 { id: "Sales-Lead Reports", label: "Lead generation insights" },
                 { id: "Sales-Lead Reports-2", label: "Conversions and prospects" },
@@ -235,7 +238,7 @@ export default function Navbar() {
         {
             id: "Loan-Pigmy Reports",
             label: "Loan & Pigmy Reports",
-            icon: "🏦",
+            icon: <Banknote size={18} className="text-orange-600" />,
             children: [
                 { id: "Loan-Pigmy Reports", label: "Loan performance" },
                 { id: "Loan-Pigmy Reports-2", label: "Pigmy collection details" },
@@ -244,13 +247,14 @@ export default function Navbar() {
         {
             id: "Audit-Compliance",
             label: "Audit & Compliance Reports",
-            icon: "📋",
+            icon: <FileCheck size={18} className="text-gray-600" />,
             children: [
                 { id: "Audit-Compliance", label: "Financial records for audits" },
                 { id: "Audit-Compliance-2", label: "Statutory requirements" },
             ]
         },
     ];
+
 
     const triggerGoogleTranslate = (lang) => {
         let attempts = 0;
@@ -276,12 +280,12 @@ export default function Navbar() {
                         <img
                             src={logo}
                             alt="Logo"
-                            className="h-8 w-8 sm:h-10 sm:w-10 rounded-lg bg-white/10 backdrop-blur-sm object-contain border-2 border-white/20 shadow-lg"
+                            className="h-15 w-30 sm:h-12 sm:w-12 object-contain relative z-10"
                         />
                     </div>
                     <div className="flex flex-col">
                         <p className="text-white text-sm sm:text-base font-bold tracking-wide">
-                            CHIT FUND PVT LTD
+                            CHITXPERT
                         </p>
                     </div>
                 </div>
@@ -316,12 +320,8 @@ export default function Navbar() {
                         </a>
                     </li>
 
-                    {/* FEATURES DROPDOWN - CLICK + HOVER SUPPORT */}
-                    <li
-                        className="relative nav-item"
-                        onMouseEnter={() => handleMouseEnter("features")}
-                        onMouseLeave={handleMouseLeave}
-                    >
+                    {/* FEATURES DROPDOWN - CLICK ONLY */}
+                    <li className="relative nav-item">
                         {/* TOP NAV BUTTON */}
                         <button
                             onClick={() => toggleMenu("features")}
@@ -333,23 +333,14 @@ export default function Navbar() {
 
                         {/* MAIN DROPDOWN */}
                         {openMenu === "features" && (
-                            <div
-                                className="absolute left-0 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 z-50 animate-fadeIn"
-                                onMouseEnter={() => handleMouseEnter("features")}
-                                onMouseLeave={handleMouseLeave}
-                            >
+                            <div className="nav-dropdown absolute left-0 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 z-50 animate-fadeIn">
                                 {/* LEFT SIDE – PARENT MENU */}
                                 <ul className="w-72 py-2">
                                     {featureMenu.map((item) => (
-                                        <li
-                                            key={item.id}
-                                            className="relative group/submenu"
-                                        >
-                                            {/* PARENT ITEM - CLICKABLE + HOVERABLE */}
+                                        <li key={item.id} className="relative group/submenu">
+                                            {/* PARENT ITEM - CLICKABLE ONLY */}
                                             <div
                                                 onClick={(e) => toggleActiveItem(item, e)}
-                                                onMouseEnter={() => setActiveItem(item)}
-                                                // Removed onMouseLeave here so clicking doesn't get cancelled by mouse movement
                                                 className={`px-5 py-3 cursor-pointer flex items-center justify-between text-sm transition-all select-none ${activeItem?.id === item.id
                                                     ? "bg-blue-50 text-blue-700"
                                                     : "text-slate-700 hover:bg-blue-50 hover:text-blue-700"
@@ -397,12 +388,8 @@ export default function Navbar() {
                         )}
                     </li>
 
-                    {/* MOBILE APPS DROPDOWN - CLICK + HOVER SUPPORT */}
-                    <li
-                        className="relative nav-item"
-                        onMouseEnter={() => handleMouseEnter("mobile")}
-                        onMouseLeave={handleMouseLeave}
-                    >
+                    {/* MOBILE APPS DROPDOWN - CLICK ONLY */}
+                    <li className="relative nav-item">
                         {/* TOP NAV BUTTON */}
                         <button
                             onClick={() => toggleMenu("mobile")}
@@ -414,17 +401,12 @@ export default function Navbar() {
 
                         {/* MAIN DROPDOWN */}
                         {openMenu === "mobile" && (
-                            <div
-                                className="absolute left-0 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 z-50 animate-fadeIn"
-                                onMouseEnter={() => handleMouseEnter("mobile")}
-                                onMouseLeave={handleMouseLeave}
-                            >
+                            <div className="nav-dropdown absolute left-0 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 z-50 animate-fadeIn">
                                 <ul className="w-72 py-2">
                                     {mobileMenu.map((item) => (
                                         <li key={item.id} className="relative group/submenu">
                                             <div
                                                 onClick={(e) => toggleActiveItem(item, e)}
-                                                onMouseEnter={() => setActiveItem(item)}
                                                 className={`px-5 py-3 cursor-pointer flex items-center justify-between text-sm transition-all select-none ${activeItem?.id === item.id
                                                     ? "bg-blue-50 text-blue-700"
                                                     : "text-slate-700 hover:bg-blue-50 hover:text-blue-700"
@@ -470,12 +452,8 @@ export default function Navbar() {
                         )}
                     </li>
 
-                    {/* REPORTS DROPDOWN - CLICK + HOVER SUPPORT (MATCHING FEATURES STRUCTURE) */}
-                    <li
-                        className="relative nav-item"
-                        onMouseEnter={() => handleMouseEnter("reports")}
-                        onMouseLeave={handleMouseLeave}
-                    >
+                    {/* REPORTS DROPDOWN - CLICK ONLY */}
+                    <li className="relative nav-item">
                         {/* TOP NAV BUTTON */}
                         <button
                             onClick={() => toggleMenu("reports")}
@@ -487,25 +465,17 @@ export default function Navbar() {
 
                         {/* MAIN DROPDOWN */}
                         {openMenu === "reports" && (
-                            <div
-                                className="absolute left-0 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 z-50 animate-fadeIn"
-                                onMouseEnter={() => handleMouseEnter("reports")}
-                                onMouseLeave={handleMouseLeave}
-                            >
+                            <div className="nav-dropdown absolute left-0 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 z-50 animate-fadeIn">
                                 {/* LEFT SIDE – PARENT MENU */}
                                 <ul className="w-72 py-2">
                                     {reportmenu.map((item) => (
-                                        <li
-                                            key={item.id}
-                                            className="relative group/submenu"
-                                        >
-                                            {/* PARENT ITEM - CLICKABLE + HOVERABLE */}
+                                        <li key={item.id} className="relative group/submenu">
+                                            {/* PARENT ITEM - CLICKABLE ONLY */}
                                             <div
                                                 onClick={(e) => toggleActiveItem(item, e)}
-                                                onMouseEnter={() => setActiveItem(item)}
                                                 className={`px-5 py-3 cursor-pointer flex items-center justify-between text-sm transition-all select-none ${activeItem?.id === item.id
-                                                        ? "bg-blue-50 text-blue-700"
-                                                        : "text-slate-700 hover:bg-blue-50 hover:text-blue-700"
+                                                    ? "bg-blue-50 text-blue-700"
+                                                    : "text-slate-700 hover:bg-blue-50 hover:text-blue-700"
                                                     }`}
                                             >
                                                 <div className="flex items-center gap-3">
@@ -521,7 +491,7 @@ export default function Navbar() {
                                                 )}
                                             </div>
 
-                                            {/* 🔹 CHILD DROPDOWN (APPEARS ON RIGHT - OUTSIDE PARENT CONTAINER) */}
+                                            {/* 🔹 CHILD DROPDOWN (APPEARS ON RIGHT) */}
                                             {activeItem?.id === item.id && item.children && (
                                                 <div
                                                     className="absolute left-full top-0 mt-0 ml-2 min-w-[220px] max-w-[260px] bg-white border border-gray-200 rounded-xl shadow-xl px-3 py-2 z-50"
@@ -593,7 +563,6 @@ export default function Navbar() {
                                     }}
                                     className="flex items-center gap-2 w-full text-left px-4 py-2.5 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 text-sm text-slate-700 hover:text-blue-700 transition-all"
                                 >
-
                                     <span>English</span>
                                 </button>
                                 <button
@@ -603,7 +572,6 @@ export default function Navbar() {
                                     }}
                                     className="flex items-center gap-2 w-full text-left px-4 py-2.5 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 text-sm text-slate-700 hover:text-blue-700 transition-all border-t border-gray-100"
                                 >
-
                                     <span>ಕನ್ನಡ</span>
                                 </button>
                             </div>
