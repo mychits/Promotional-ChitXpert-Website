@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import GoogleMapComponent from '../components/GoogleMapComponent';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const ContactPage = () => {
     // Form state
@@ -66,8 +68,9 @@ const ContactPage = () => {
     };
 
     return (
-        <div className="min-h-screen bg-blue-50 py-12 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto">
+        <div className="min-h-screen bg-blue-50  ">
+            <Navbar/>
+            <div className="max-w-7xl mx-auto mb-4">
                 {/* Page Title */}
                 <div className="text-center mb-12">
                     <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get in Touch</h1>
@@ -247,6 +250,7 @@ const ContactPage = () => {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 };

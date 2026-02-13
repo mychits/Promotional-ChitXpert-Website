@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import expertImg from "../assets/images/download.png";
+import expertImg from "../assets/images/PNG DOWN.png";
 
 const ScrollingPopup = () => {
     const [showPopup, setShowPopup] = useState(false);
@@ -31,7 +31,7 @@ const ScrollingPopup = () => {
             const scrollPercentage = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
 
             // Show first popup at 40% scroll
-            if (scrollPercentage > 40 && !showPopup) {
+            if (scrollPercentage > 20 && !showPopup) {
                 setShowPopup(true);
                 // Remove scroll listener after triggering
                 window.removeEventListener('scroll', handleScroll);

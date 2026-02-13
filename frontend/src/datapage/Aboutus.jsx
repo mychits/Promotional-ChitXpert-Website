@@ -11,21 +11,25 @@ import {
   Phone,
   MapPin
 } from 'lucide-react';
+import Navbar from '../components/Navbar';
+import Footer from "../components/Footer"
+import Familyimg from "../assets/images/family.png"
+
 
 const AboutUs = () => {
   // Team members data
   const teamMembers = [
     {
-      name: "Rajesh Kumar",
-      role: "Founder & CEO",
-      bio: "With 15 years of experience in financial software development, Rajesh founded ChitXpert to modernize the chit fund industry. Previously led product development at a major banking software company.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      name: "LAKSHMI",
+      role: "DIRECTOR",
+      bio: "With 15 years of experience in financial software development, LAKSHMI founded ChitXpert to modernize the chit fund industry. Previously led product development at a major banking software company.",
+      image: ""
     },
     {
-      name: "Priya Sharma",
-      role: "CTO",
-      bio: "Expert in fintech solutions with a background in cybersecurity. Prior to ChitXpert, Priya was the lead architect for a major payment processing platform.",
-      image: "https://images.unsplash.com/photo-1570295779621-7188582d86b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      name: "CHANDRASHEKAR",
+      role: "SENIOR CORDINATOR",
+      bio: "Expert in fintech solutions with a background in cybersecurity. Prior to ChitXpert, CHANDRASHEKAR was the lead architect for a major payment processing platform.",
+      image: ""
     },
     {
       name: "Vikram Singh",
@@ -104,12 +108,14 @@ const AboutUs = () => {
   };
 
   return (
+   
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+       <Navbar/>
       {/* Hero Section */}
       <div className="relative bg-gradient-to-r from-blue-600 to-indigo-700 py-20 overflow-hidden">
         {/* Simple SVG Pattern Overlay */}
         <div className="absolute inset-0 opacity-10" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+          backgroundImage: {Familyimg}
         }}></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -129,7 +135,7 @@ const AboutUs = () => {
             {/* Fixed aspect ratio using standard class */}
             <div className="aspect-video w-full">
               <img 
-                src="https://images.unsplash.com/photo-1563981186-c684396965c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                src={Familyimg} 
                 alt="Team working together" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
@@ -391,6 +397,7 @@ const AboutUs = () => {
           </p>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

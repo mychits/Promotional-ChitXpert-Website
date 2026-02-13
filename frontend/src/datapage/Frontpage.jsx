@@ -34,14 +34,16 @@ export default function Home() {
       <FloatingWhatsApp />
       <AboutSection />
       <ScrollingPopup />
-      <FeatureComparisonTable/>
-       <Feature/>
+        <Feature/>
+      
+     
        <ReasonsSection/>
        <HowItWorks/>
         <AdminPanelFeatures/>
         <TrackInflows/>
         <Reports/>
         <Advantages/>
+        <FeatureComparisonTable/>
         <AgentApp/>    
         <FAQ/>
       <Contact/>

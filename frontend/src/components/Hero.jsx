@@ -25,8 +25,8 @@ export default function Hero() {
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl lg:text-6xl font-extrabold text-blue-600 leading-tight mb-5">
-              Next-Gen ChitXpert<br />
+            <h1 className="text-2xl lg:text-6xl font-extrabold text-blue-600 leading-tight mb-5">
+              ChitXpert<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700">
                 Management Platform
               </span>
