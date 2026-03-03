@@ -6,7 +6,7 @@ import HeroBanner from "../components/Herobanner";
 import Floatingdemo from "../components/Floatingdemo";
 import FloatingWhatsApp from "../components/FloatingWhatsApp";
 import AboutSection from "../components/AboutSection";
-import Contact from "../components/Contact";
+
 import Footer from "../components/Footer";
 import Feature from "../components/Feature";
 import ReasonsSection from "../components/ReasonsSection"
@@ -46,7 +46,7 @@ export default function Home() {
         <FeatureComparisonTable/>
         <AgentApp/>    
         <FAQ/>
-      <Contact/>
+   
       <Footer />
     </>
   );

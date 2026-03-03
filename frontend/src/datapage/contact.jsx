@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import GoogleMapComponent from '../components/GoogleMapComponent';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -132,16 +131,19 @@ const ContactPage = () => {
 
                             {/* Map Section - Fixed */}
                             <div className="mt-auto w-full">
-                                <div className="relative h-64 w-full rounded-xl overflow-hidden shadow-lg border border-white/20 bg-white">
-                                    {/* This wrapper ensures the map takes up the full height/width of the container */}
-                                    <div className="w-full h-full">
-                                        <GoogleMapComponent />
-                                    </div>
+  <div className="relative h-64 w-full rounded-xl overflow-hidden shadow-lg border border-white/20 bg-white">
+    
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d972.149315969339!2d77.55709816964503!3d12.933586406292443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d5e49bfb429%3A0x64d416e4e9ffbbe0!2sMyChits!5e0!3m2!1sen!2sin!4v1772538474160!5m2!1sen!2sin"
+      className="w-full h-full"
+      style={{ border: 0 }}
+      loading="lazy"
+      allowFullScreen
+      referrerPolicy="no-referrer-when-downgrade"
+    ></iframe>
 
-                                    {/* Overlay Button */}
-                                   
-                                </div>
-                            </div>
+  </div>
+</div>
                         </div>
                     </div>
 

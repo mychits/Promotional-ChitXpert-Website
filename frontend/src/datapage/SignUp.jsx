@@ -107,7 +107,7 @@ export default function SignUp() {
       <div className="min-h-screen flex items-center justify-center px-4">
         <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 items-center gap-10">
 
-          <div className="relative flex flex-col justify-start pt-24 px-6 md:px-16 text-blue-600">
+          <div className="relative flex flex-col justify-start pt-24 px-6 md:px-16 text-teal-600">
             <div className="max-w-lg">
               <h1 className="text-3xl md:text-4xl font-extrabold leading-tight mb-5 text-left">
                 Sign Up <br />
@@ -115,7 +115,7 @@ export default function SignUp() {
                 Software for Your Business
               </h1>
 
-              <p className="text-base md:text-lg text-blue-800/80 leading-relaxed text-left mr-10 pr-20" >
+              <p className="text-base md:text-lg text-teal-800/80 leading-relaxed text-left mr-10 pr-20" >
                 Manage chit groups, auctions and collections easily using{" "}
                 <span className="font-semibold">MyChits</span> professional platform.
               </p>
@@ -126,7 +126,7 @@ export default function SignUp() {
 
           <div className="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 w-full max-w-md md:ml-auto">
 
-            <h2 className="text-xl font-bold text-center mb-4 text-blue-600">
+            <h2 className="text-xl font-bold text-center mb-4 text-teal-600">
               Sign Up for Demo
             </h2>
 
@@ -174,7 +174,7 @@ export default function SignUp() {
 
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition"
+                className="w-full bg-teal-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition"
               >
                 Submit & Continue
               </button>

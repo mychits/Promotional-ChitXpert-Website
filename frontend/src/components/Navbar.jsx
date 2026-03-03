@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ChevronDown, Menu, X, Globe, ArrowRight, ChevronRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import logo from "../assets/images/logop.jpeg";
+import logo from "../assets/images/logo cx.png";
 import {
     Users,
     DollarSign,
@@ -17,33 +17,23 @@ import {
     Building2,
     Banknote,
     FileCheck,
-    Briefcase
+    Briefcase, IndianRupee ,BadgeCheck,
 } from "lucide-react";
 
 export default function Navbar() {
     const [openTranslate, setOpenTranslate] = useState(false);
-    const [openMenu, setOpenMenu] = useState(null); // 'features', 'mobile', 'reports'
+    const [openMenu, setOpenMenu] = useState(null); 
     const [mobileOpen, setMobileOpen] = useState(false);
     const [mobileSections, setMobileSections] = useState({
         features: false,
         mobileApps: false,
         reports: false,
     });
-    const [activeItem, setActiveItem] = useState(null);
+    const [hoverItem, setHoverItem] = useState(null);
     const { t } = useTranslation();
 
-    // --- CLICK LOGIC ---
-    // Toggle Main Menu (Features, Mobile, Reports)
     const toggleMenu = (menu) => {
-        // If clicking the same menu that is open, close it. Otherwise, open the new one.
         setOpenMenu((prev) => (prev === menu ? null : menu));
-        setActiveItem(null); // Reset sub-menu when switching main menus
-    };
-
-    // Toggle Sub-Menu Item (Chit Group Mgmt, etc.)
-    const toggleActiveItem = (item, e) => {
-        e.stopPropagation(); // Prevent event bubbling
-        setActiveItem((prev) => (prev?.id === item.id ? null : item));
     };
 
     const toggleMobileSection = (section) => {
@@ -58,7 +48,7 @@ export default function Navbar() {
         const handleClickOutside = (e) => {
             if (!e.target.closest(".nav-dropdown") && !e.target.closest(".nav-item")) {
                 setOpenMenu(null);
-                setActiveItem(null);
+                setHoverItem(null);
             }
         };
         document.addEventListener("mousedown", handleClickOutside);
@@ -70,7 +60,8 @@ export default function Navbar() {
         {
             id: "chit-group-management",
             label: "Chit Group Management",
-            icon: <BarChart3 size={18} className="text-blue-600" />,
+            icon: <BarChart3 size={18} className="text-teal-600" />,
+            link: "/features#chit-group-management",  
             children: [
                 { id: "create-chit", label: "Create and manage multiple chit groups" },
                 { id: "assign-members", label: "Track group performance and auctions" },
@@ -79,7 +70,8 @@ export default function Navbar() {
         {
             id: "customer-management",
             label: "Customer Management",
-            icon: <Users size={18} className="text-green-600" />,
+            icon: <Users size={18} className="text-cyan-600" />,
+            link: "/features#member-management",
             children: [
                 { id: "add-customer", label: "Maintain secure profiles" },
                 { id: "kyc", label: "Automated reminders for payments" },
@@ -88,7 +80,8 @@ export default function Navbar() {
         {
             id: "auction-bid-handling",
             label: "Auction & Bid Handling",
-            icon: <DollarSign size={18} className="text-yellow-600" />,
+           icon: <IndianRupee size={18} className="text-yellow-600" />,
+            link: "/features#auction-bid-handling",
             children: [
                 { id: "auction", label: "Automate auction events" },
                 { id: "biding", label: "Manage winners and discounts" },
@@ -98,8 +91,9 @@ export default function Navbar() {
             id: "financial-management",
             label: "Accounts & Financial Mgmt",
             icon: <TrendingUp size={18} className="text-purple-600" />,
+            link: "/features#financial-management",
             children: [
-                { id: "accounts", label: "Ledger entries and vouchers" },
+                { id: "accounts", label: "Ledger entries and vouchers"},
                 { id: "financial", label: "Real-time financial updates" },
             ],
         },
@@ -107,6 +101,7 @@ export default function Navbar() {
             id: "Payment-Tracking",
             label: "Automated Collection & Payment Tracking",
             icon: <CreditCard size={18} className="text-red-600" />,
+            link: "/features#Payment-Tracking",
             children: [
                 { id: "payments", label: "Online and offline collection tracking" },
                 { id: "collection", label: "Ensures transparency" },
@@ -116,6 +111,7 @@ export default function Navbar() {
             id: "Communication-Tools",
             label: "Communication Tools",
             icon: <MessageSquare size={18} className="text-indigo-600" />,
+            link:"/features#auction-bid-handling",
             children: [
                 { id: "sms", label: "SMS alerts for due payments" },
                 { id: "comm-tool", label: "Offline SMS support" },
@@ -125,6 +121,7 @@ export default function Navbar() {
             id: "Reports-Analytics",
             label: "Reports & Analytics",
             icon: <FileText size={18} className="text-orange-600" />,
+            link: "/features#Reports-Analytics",
             children: [
                 { id: "report", label: "Real-time pending lists" },
                 { id: "analytics", label: "Performance tracking" },
@@ -134,6 +131,7 @@ export default function Navbar() {
             id: "Agent-Management",
             label: "Agent Management",
             icon: <User size={18} className="text-pink-600" />,
+            link: "/features#Agent-Management",
             children: [
                 { id: "agent", label: "Track collections and attendance" },
                 { id: "finacial", label: "Assign tasks and monitor productivity" },
@@ -143,6 +141,7 @@ export default function Navbar() {
             id: "Security-Compliance",
             label: "Security & Compliance",
             icon: <ShieldCheck size={18} className="text-gray-600" />,
+            link: "/features#Security-Compliance",
             children: [
                 { id: "security", label: "Role-based access" },
                 { id: "complaince", label: "Regulatory standards" },
@@ -152,6 +151,7 @@ export default function Navbar() {
             id: "Web-Mobile Access",
             label: "Web & Mobile Access",
             icon: <Smartphone size={18} className="text-teal-600" />,
+            link: "/features#Web-Mobile Access",
             children: [
                 { id: "webaccess", label: "Cloud-based access" },
                 { id: "mobileaccess", label: "Mobile apps for admins" },
@@ -160,22 +160,44 @@ export default function Navbar() {
     ];
 
     const mobileMenu = [
-        {
+        {   
             id: "Agent-app",
-            label: "Agent Fund App",
-            icon: <Briefcase size={18} className="text-blue-600" />,
+            label: "Agent App",
+            icon: <Briefcase size={18} className="text-teal-600" />,
+            link: "/mobile#Agent-app",
             children: [
-                { id: "agent-app", label: "Manages customer details" },
+                { id: "agent-app", label: "Manages customer details"},
                 { id: "agent-app-2", label: "Record monthly installments" },
             ],
         },
         {
             id: "Customer-app",
             label: "Customer App",
-            icon: <Users size={18} className="text-green-600" />,
+            icon: <Users size={18} className="text-cyan-600" />,
+            link: "/mobile#Customer-app",
             children: [
                 { id: "Customer-app", label: "View joined chit groups" },
                 { id: "Customer-app-2", label: "Check installment due dates" },
+            ],
+        },
+         {
+            id: "Collection-app",
+            label: "Collection App",
+            icon: <CreditCard size={18} className="text-purple-600" />,
+            link: "/mobile#Collection-app",
+            children: [
+                { id: "Collection-app", label: "View joined chit groups"},
+                { id: "Collection-app-2", label: "Check installment due dates" },
+            ],
+        },
+        {
+            id: "Employed-app",
+            label: "Employed App",
+            icon: <BadgeCheck size={18} className="text-blue-600" />,
+            link: "/mobile#Employed-app",
+            children: [
+                { id: "Employed-app", label: "View joined chit groups"},
+                { id: "Employed-app-2", label: "Check installment due dates" },
             ],
         },
     ];
@@ -184,7 +206,8 @@ export default function Navbar() {
         {
             id: "Daybook-Report",
             label: "Daybook Report",
-            icon: <Calendar size={18} className="text-blue-600" />,
+            icon: <Calendar size={18} className="text-teal-600" />,
+            link: "/report#daybook-Reports",
             children: [
                 { id: "Daybook-Report", label: "Daily cash inflows and outflows" },
                 { id: "Daybook-Report-2", label: "Real-time transaction entries" },
@@ -193,7 +216,8 @@ export default function Navbar() {
         {
             id: "Payment-Reports",
             label: "Payment Reports",
-            icon: <CreditCard size={18} className="text-green-600" />,
+            icon: <CreditCard size={18} className="text-cyan-600" />,
+            link: "/report#Payment-Reports",
             children: [
                 { id: "Payment-Reports", label: "Installment collections" },
                 { id: "Payment-Reports-2", label: "Pending and overdue installments" },
@@ -203,6 +227,7 @@ export default function Navbar() {
             id: "Customer-Reports",
             label: "Customer Reports",
             icon: <Users size={18} className="text-purple-600" />,
+            link: "/report#Customer-Reports",
             children: [
                 { id: "Customer-Reports", label: "All registered customers" },
                 { id: "Customer-Reports-2", label: "Active and inactive accounts" },
@@ -212,6 +237,7 @@ export default function Navbar() {
             id: "Auction-Reports",
             label: "Auction Reports",
             icon: <DollarSign size={18} className="text-yellow-600" />,
+            link: "/report#Auction-Reports",
             children: [
                 { id: "Auction-Reports", label: "Conducted chit auctions" },
                 { id: "Auction-Reports-2", label: "Bid amounts and winners" },
@@ -221,6 +247,7 @@ export default function Navbar() {
             id: "Collection-Reports",
             label: "Collection Reports",
             icon: <BarChart3 size={18} className="text-red-600" />,
+            link: "/report#Collection-Reports",
             children: [
                 { id: "Collection-Reports", label: "Installment collections" },
                 { id: "Collection-Reports-2", label: "Agent-wise performance" },
@@ -230,15 +257,17 @@ export default function Navbar() {
             id: "Sales-Lead Reports",
             label: "Sales & Lead Reports",
             icon: <TrendingUp size={18} className="text-indigo-600" />,
+            link: "/report#Sales-Lead Reports",
             children: [
                 { id: "Sales-Lead Reports", label: "Lead generation insights" },
-                { id: "Sales-Lead Reports-2", label: "Conversions and prospects" },
+                { id: "Sales-Lead Reports-2", label: "Conversions and prospects"},
             ]
         },
         {
             id: "Loan-Pigmy Reports",
             label: "Loan & Pigmy Reports",
             icon: <Banknote size={18} className="text-orange-600" />,
+            link: "/report#Loan-Pigmy Reports",
             children: [
                 { id: "Loan-Pigmy Reports", label: "Loan performance" },
                 { id: "Loan-Pigmy Reports-2", label: "Pigmy collection details" },
@@ -248,6 +277,7 @@ export default function Navbar() {
             id: "Audit-Compliance",
             label: "Audit & Compliance Reports",
             icon: <FileCheck size={18} className="text-gray-600" />,
+            link: "/report#Audit-Compliance",
             children: [
                 { id: "Audit-Compliance", label: "Financial records for audits" },
                 { id: "Audit-Compliance-2", label: "Statutory requirements" },
@@ -271,10 +301,10 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="sticky top-0 z-50 bg-gradient-to-r from-blue-600 to-indigo-700 shadow-lg">
+        <nav className="sticky top-0 z-50 bg-gradient-to-r from-teal-500 to-cyan-600 shadow-lg">
             <div className="w-full px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
                 {/* LOGO & HEADING - Enhanced */}
-                <div className="flex items-center gap-2 cursor-pointer group">
+                <a href="/" className="flex items-center gap-2 cursor-pointer group">
                     <div className="relative group-hover:scale-110 transition-transform duration-300">
                         <div className="absolute inset-0 bg-white/30 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"></div>
                         <img
@@ -285,10 +315,10 @@ export default function Navbar() {
                     </div>
                     <div className="flex flex-col">
                         <p className="text-white text-sm sm:text-base font-bold tracking-wide">
-                            CHITXPERT
+                            ChitXpert
                         </p>
                     </div>
-                </div>
+                </a>
 
                 {/* DESKTOP MENU - Enhanced Styling */}
                 <ul className="hidden md:flex items-center space-x-1 text-white text-sm font-medium ml-6">
@@ -320,7 +350,7 @@ export default function Navbar() {
                         </a>
                     </li>
 
-                    {/* FEATURES DROPDOWN - CLICK ONLY */}
+                    {/* FEATURES DROPDOWN - HOVER FOR CHILDREN, CLICK FOR PARENT */}
                     <li className="relative nav-item">
                         {/* TOP NAV BUTTON */}
                         <button
@@ -337,14 +367,20 @@ export default function Navbar() {
                                 {/* LEFT SIDE – PARENT MENU */}
                                 <ul className="w-72 py-2">
                                     {featureMenu.map((item) => (
-                                        <li key={item.id} className="relative group/submenu">
-                                            {/* PARENT ITEM - CLICKABLE ONLY */}
-                                            <div
-                                                onClick={(e) => toggleActiveItem(item, e)}
-                                                className={`px-5 py-3 cursor-pointer flex items-center justify-between text-sm transition-all select-none ${activeItem?.id === item.id
-                                                    ? "bg-blue-50 text-blue-700"
-                                                    : "text-slate-700 hover:bg-blue-50 hover:text-blue-700"
-                                                    }`}
+                                        <li 
+                                            key={item.id} 
+                                            className="relative"
+                                            onMouseEnter={() => setHoverItem(item.id)}
+                                            onMouseLeave={() => setHoverItem(null)}
+                                        >
+                                            {/* PARENT ITEM - CLICKABLE LINK */}
+                                            <a
+                                                href={item.link}
+                                                className={`px-5 py-3 flex items-center justify-between text-sm transition-all select-none ${
+                                                    hoverItem === item.id
+                                                        ? "bg-teal-50 text-teal-700"
+                                                        : "text-slate-700 hover:bg-teal-50 hover:text-teal-700"
+                                                }`}
                                             >
                                                 <div className="flex items-center gap-3">
                                                     <span className="text-xl">{item.icon}</span>
@@ -353,14 +389,15 @@ export default function Navbar() {
                                                 {item.children && (
                                                     <ChevronRight
                                                         size={16}
-                                                        className={`text-gray-400 transition-transform duration-200 ${activeItem?.id === item.id ? "rotate-90 text-blue-600" : ""
-                                                            }`}
+                                                        className={`text-gray-400 transition-transform duration-200 ${
+                                                            hoverItem === item.id ? "rotate-90 text-teal-600" : ""
+                                                        }`}
                                                     />
                                                 )}
-                                            </div>
+                                            </a>
 
-                                            {/* 🔹 CHILD DROPDOWN (APPEARS ON RIGHT) */}
-                                            {activeItem?.id === item.id && item.children && (
+                                            {/* 🔹 CHILD DROPDOWN (APPEARS ON HOVER) */}
+                                            {hoverItem === item.id && item.children && (
                                                 <div
                                                     className="absolute left-full top-0 mt-0 ml-2 min-w-[220px] max-w-[260px] bg-white border border-gray-200 rounded-xl shadow-xl px-3 py-2 z-50"
                                                 >
@@ -372,8 +409,8 @@ export default function Navbar() {
                                                         {item.children.map((child) => (
                                                             <a
                                                                 key={child.id}
-                                                                href={`/features#${child.id}`}
-                                                                className="block px-2 py-2 text-sm leading-snug rounded-md text-slate-600 hover:bg-blue-50 hover:text-blue-700 transition-all"
+                                                                href={child.link}
+                                                                className="block px-2 py-2 text-sm leading-snug rounded-md text-slate-600 hover:bg-teal-50 hover:text-teal-700 transition-all"
                                                             >
                                                                 {child.label}
                                                             </a>
@@ -388,7 +425,7 @@ export default function Navbar() {
                         )}
                     </li>
 
-                    {/* MOBILE APPS DROPDOWN - CLICK ONLY */}
+                    {/* MOBILE APPS DROPDOWN - HOVER FOR CHILDREN, CLICK FOR PARENT */}
                     <li className="relative nav-item">
                         {/* TOP NAV BUTTON */}
                         <button
@@ -404,13 +441,19 @@ export default function Navbar() {
                             <div className="nav-dropdown absolute left-0 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 z-50 animate-fadeIn">
                                 <ul className="w-72 py-2">
                                     {mobileMenu.map((item) => (
-                                        <li key={item.id} className="relative group/submenu">
-                                            <div
-                                                onClick={(e) => toggleActiveItem(item, e)}
-                                                className={`px-5 py-3 cursor-pointer flex items-center justify-between text-sm transition-all select-none ${activeItem?.id === item.id
-                                                    ? "bg-blue-50 text-blue-700"
-                                                    : "text-slate-700 hover:bg-blue-50 hover:text-blue-700"
-                                                    }`}
+                                        <li 
+                                            key={item.id} 
+                                            className="relative"
+                                            onMouseEnter={() => setHoverItem(item.id)}
+                                            onMouseLeave={() => setHoverItem(null)}
+                                        >
+                                            <a
+                                                href={item.link}
+                                                className={`px-5 py-3 flex items-center justify-between text-sm transition-all select-none ${
+                                                    hoverItem === item.id
+                                                        ? "bg-teal-50 text-teal-700"
+                                                        : "text-slate-700 hover:bg-teal-50 hover:text-teal-700"
+                                                }`}
                                             >
                                                 <div className="flex items-center gap-3">
                                                     <span className="text-xl">{item.icon}</span>
@@ -419,12 +462,13 @@ export default function Navbar() {
                                                 {item.children && (
                                                     <ChevronRight
                                                         size={16}
-                                                        className={`text-gray-400 transition-transform duration-200 ${activeItem?.id === item.id ? "rotate-90 text-blue-600" : ""
-                                                            }`}
+                                                        className={`text-gray-400 transition-transform duration-200 ${
+                                                            hoverItem === item.id ? "rotate-90 text-teal-600" : ""
+                                                        }`}
                                                     />
                                                 )}
-                                            </div>
-                                            {activeItem?.id === item.id && item.children && (
+                                            </a>
+                                            {hoverItem === item.id && item.children && (
                                                 <div
                                                     className="absolute left-full top-0 mt-0 ml-2 min-w-[220px] max-w-[260px] bg-white border border-gray-200 rounded-xl shadow-xl px-3 py-2 z-50"
                                                 >
@@ -436,8 +480,8 @@ export default function Navbar() {
                                                         {item.children.map((child) => (
                                                             <a
                                                                 key={child.id}
-                                                                href={`/mobile#${child.id}`}
-                                                                className="block px-2 py-2 text-sm leading-snug rounded-md text-slate-600 hover:bg-blue-50 hover:text-blue-700 transition-all"
+                                                                href={child.link}
+                                                                className="block px-2 py-2 text-sm leading-snug rounded-md text-slate-600 hover:bg-teal-50 hover:text-teal-700 transition-all"
                                                             >
                                                                 {child.label}
                                                             </a>
@@ -452,7 +496,7 @@ export default function Navbar() {
                         )}
                     </li>
 
-                    {/* REPORTS DROPDOWN - CLICK ONLY */}
+                    {/* REPORTS DROPDOWN - HOVER FOR CHILDREN, CLICK FOR PARENT */}
                     <li className="relative nav-item">
                         {/* TOP NAV BUTTON */}
                         <button
@@ -469,14 +513,20 @@ export default function Navbar() {
                                 {/* LEFT SIDE – PARENT MENU */}
                                 <ul className="w-72 py-2">
                                     {reportmenu.map((item) => (
-                                        <li key={item.id} className="relative group/submenu">
-                                            {/* PARENT ITEM - CLICKABLE ONLY */}
-                                            <div
-                                                onClick={(e) => toggleActiveItem(item, e)}
-                                                className={`px-5 py-3 cursor-pointer flex items-center justify-between text-sm transition-all select-none ${activeItem?.id === item.id
-                                                    ? "bg-blue-50 text-blue-700"
-                                                    : "text-slate-700 hover:bg-blue-50 hover:text-blue-700"
-                                                    }`}
+                                        <li 
+                                            key={item.id} 
+                                            className="relative"
+                                            onMouseEnter={() => setHoverItem(item.id)}
+                                            onMouseLeave={() => setHoverItem(null)}
+                                        >
+                                            {/* PARENT ITEM - CLICKABLE LINK */}
+                                            <a
+                                                href={item.link}
+                                                className={`px-5 py-3 flex items-center justify-between text-sm transition-all select-none ${
+                                                    hoverItem === item.id
+                                                        ? "bg-teal-50 text-teal-700"
+                                                        : "text-slate-700 hover:bg-teal-50 hover:text-teal-700"
+                                                }`}
                                             >
                                                 <div className="flex items-center gap-3">
                                                     <span className="text-xl">{item.icon}</span>
@@ -485,14 +535,15 @@ export default function Navbar() {
                                                 {item.children && (
                                                     <ChevronRight
                                                         size={16}
-                                                        className={`text-gray-400 transition-transform duration-200 ${activeItem?.id === item.id ? "rotate-90 text-blue-600" : ""
-                                                            }`}
+                                                        className={`text-gray-400 transition-transform duration-200 ${
+                                                            hoverItem === item.id ? "rotate-90 text-teal-600" : ""
+                                                        }`}
                                                     />
                                                 )}
-                                            </div>
+                                            </a>
 
-                                            {/* 🔹 CHILD DROPDOWN (APPEARS ON RIGHT) */}
-                                            {activeItem?.id === item.id && item.children && (
+                                            {/* 🔹 CHILD DROPDOWN (APPEARS ON HOVER) */}
+                                            {hoverItem === item.id && item.children && (
                                                 <div
                                                     className="absolute left-full top-0 mt-0 ml-2 min-w-[220px] max-w-[260px] bg-white border border-gray-200 rounded-xl shadow-xl px-3 py-2 z-50"
                                                 >
@@ -504,8 +555,8 @@ export default function Navbar() {
                                                         {item.children.map((child) => (
                                                             <a
                                                                 key={child.id}
-                                                                href={`/report#${child.id}`}
-                                                                className="block px-2 py-2 text-sm leading-snug rounded-md text-slate-600 hover:bg-blue-50 hover:text-blue-700 transition-all"
+                                                                href={child.link}
+                                                                className="block px-2 py-2 text-sm leading-snug rounded-md text-slate-600 hover:bg-teal-50 hover:text-teal-700 transition-all"
                                                             >
                                                                 {child.label}
                                                             </a>
@@ -561,7 +612,7 @@ export default function Navbar() {
                                         triggerGoogleTranslate("en");
                                         setOpenTranslate(false);
                                     }}
-                                    className="flex items-center gap-2 w-full text-left px-4 py-2.5 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 text-sm text-slate-700 hover:text-blue-700 transition-all"
+                                    className="flex items-center gap-2 w-full text-left px-4 py-2.5 hover:bg-gradient-to-r hover:from-teal-50 hover:to-cyan-50 text-sm text-slate-700 hover:text-teal-700 transition-all"
                                 >
                                     <span>English</span>
                                 </button>
@@ -570,7 +621,7 @@ export default function Navbar() {
                                         triggerGoogleTranslate("kn");
                                         setOpenTranslate(false);
                                     }}
-                                    className="flex items-center gap-2 w-full text-left px-4 py-2.5 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 text-sm text-slate-700 hover:text-blue-700 transition-all border-t border-gray-100"
+                                    className="flex items-center gap-2 w-full text-left px-4 py-2.5 hover:bg-gradient-to-r hover:from-teal-50 hover:to-cyan-50 text-sm text-slate-700 hover:text-teal-700 transition-all border-t border-gray-100"
                                 >
                                     <span>ಕನ್ನಡ</span>
                                 </button>
@@ -593,7 +644,7 @@ export default function Navbar() {
                 <div className="md:hidden bg-white border-t border-gray-100 shadow-2xl animate-fadeIn">
                     <ul className="flex flex-col p-4 space-y-1 text-sm font-medium">
                         <li>
-                            <a href="/" className="block px-4 py-3 text-slate-700 rounded-xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:text-blue-700 transition-all">
+                            <a href="/" className="block px-4 py-3 text-slate-700 rounded-xl hover:bg-gradient-to-r hover:from-teal-50 hover:to-cyan-50 hover:text-teal-700 transition-all">
                                 <span className="flex items-center gap-2">
                                     <span>🏠</span>
                                     <span>Home</span>
@@ -601,7 +652,7 @@ export default function Navbar() {
                             </a>
                         </li>
                         <li>
-                            <a href="/#AboutSection" className="block px-4 py-3 text-slate-700 rounded-xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:text-blue-700 transition-all">
+                            <a href="/#AboutSection" className="block px-4 py-3 text-slate-700 rounded-xl hover:bg-gradient-to-r hover:from-teal-50 hover:to-cyan-50 hover:text-teal-700 transition-all">
                                 <span className="flex items-center gap-2">
                                     <span>ℹ️</span>
                                     <span>About Us</span>
@@ -613,7 +664,7 @@ export default function Navbar() {
                         <li>
                             <button
                                 onClick={() => toggleMobileSection("features")}
-                                className="flex justify-between items-center w-full px-4 py-3 text-slate-700 hover:text-blue-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 rounded-xl transition-all"
+                                className="flex justify-between items-center w-full px-4 py-3 text-slate-700 hover:text-teal-700 hover:bg-gradient-to-r hover:from-teal-50 hover:to-cyan-50 rounded-xl transition-all"
                             >
                                 <span className="flex items-center gap-2">
                                     <span>✨</span>
@@ -629,8 +680,8 @@ export default function Navbar() {
                                     {featureMenu.map((item) => (
                                         <a
                                             key={item.id}
-                                            href={`/features#${item.id}`}
-                                            className="flex items-center gap-2 px-4 py-2.5 hover:text-blue-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 rounded-lg transition-all group"
+                                            href={item.link}
+                                            className="flex items-center gap-2 px-4 py-2.5 hover:text-teal-700 hover:bg-gradient-to-r hover:from-teal-50 hover:to-cyan-50 rounded-lg transition-all group"
                                         >
                                             <span className="text-lg">{item.icon}</span>
                                             <span className="group-hover:translate-x-1 transition-transform">{item.label}</span>
@@ -641,7 +692,7 @@ export default function Navbar() {
                         </li>
 
                         <li>
-                            <a href="/#action" className="block px-4 py-3 text-slate-700 rounded-xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:text-blue-700 transition-all">
+                            <a href="/#action" className="block px-4 py-3 text-slate-700 rounded-xl hover:bg-gradient-to-r hover:from-teal-50 hover:to-cyan-50 hover:text-teal-700 transition-all">
                                 <span className="flex items-center gap-2">
                                     <span>💰</span>
                                     <span>Auction</span>
@@ -653,7 +704,7 @@ export default function Navbar() {
                         <li>
                             <button
                                 onClick={() => toggleMobileSection("mobileApps")}
-                                className="flex justify-between items-center w-full px-4 py-3 text-slate-700 hover:text-blue-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 rounded-xl transition-all"
+                                className="flex justify-between items-center w-full px-4 py-3 text-slate-700 hover:text-teal-700 hover:bg-gradient-to-r hover:from-teal-50 hover:to-cyan-50 rounded-xl transition-all"
                             >
                                 <span className="flex items-center gap-2">
                                     <span>📱</span>
@@ -669,8 +720,8 @@ export default function Navbar() {
                                     {mobileMenu.map((item) => (
                                         <a
                                             key={item.id}
-                                            href={`/mobile#${item.id}`}
-                                            className="flex items-center gap-2 px-4 py-2.5 hover:text-blue-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 rounded-lg transition-all group"
+                                            href={item.link}
+                                            className="flex items-center gap-2 px-4 py-2.5 hover:text-teal-700 hover:bg-gradient-to-r hover:from-teal-50 hover:to-cyan-50 rounded-lg transition-all group"
                                         >
                                             <span className="text-lg">{item.icon}</span>
                                             <span className="group-hover:translate-x-1 transition-transform">{item.label}</span>
@@ -684,7 +735,7 @@ export default function Navbar() {
                         <li>
                             <button
                                 onClick={() => toggleMobileSection("reports")}
-                                className="flex justify-between items-center w-full px-4 py-3 text-slate-700 hover:text-blue-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 rounded-xl transition-all"
+                                className="flex justify-between items-center w-full px-4 py-3 text-slate-700 hover:text-teal-700 hover:bg-gradient-to-r hover:from-teal-50 hover:to-cyan-50 rounded-xl transition-all"
                             >
                                 <span className="flex items-center gap-2">
                                     <span>📊</span>
@@ -700,8 +751,8 @@ export default function Navbar() {
                                     {reportmenu.map((item) => (
                                         <a
                                             key={item.id}
-                                            href={`/report#${item.id}`}
-                                            className="flex items-center gap-2 px-4 py-2.5 hover:text-blue-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 rounded-lg transition-all group"
+                                            href={item.link}
+                                            className="flex items-center gap-2 px-4 py-2.5 hover:text-teal-700 hover:bg-gradient-to-r hover:from-teal-50 hover:to-cyan-50 rounded-lg transition-all group"
                                         >
                                             <span className="text-lg">{item.icon}</span>
                                             <span className="group-hover:translate-x-1 transition-transform">{item.label}</span>
@@ -712,7 +763,7 @@ export default function Navbar() {
                         </li>
 
                         <li>
-                            <a href="/#ReasonsSection" className="block px-4 py-3 text-slate-700 rounded-xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:text-blue-700 transition-all">
+                            <a href="/#ReasonsSection" className="block px-4 py-3 text-slate-700 rounded-xl hover:bg-gradient-to-r hover:from-teal-50 hover:to-cyan-50 hover:text-teal-700 transition-all">
                                 <span className="flex items-center gap-2">
                                     <span>⭐</span>
                                     <span>Why Choose Us</span>
@@ -720,7 +771,7 @@ export default function Navbar() {
                             </a>
                         </li>
                         <li>
-                            <a href="/#faq" className="block px-4 py-3 text-slate-700 rounded-xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:text-blue-700 transition-all">
+                            <a href="/#faq" className="block px-4 py-3 text-slate-700 rounded-xl hover:bg-gradient-to-r hover:from-teal-50 hover:to-cyan-50 hover:text-teal-700 transition-all">
                                 <span className="flex items-center gap-2">
                                     <span>❓</span>
                                     <span>FAQ</span>

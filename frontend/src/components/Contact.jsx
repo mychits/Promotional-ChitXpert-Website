@@ -1,6 +1,6 @@
 import React from "react";
 import { Mail, Phone, Facebook, Instagram, Youtube } from "lucide-react";
-import logo from "../assets/images/LOGOrbg.png";
+import logo from "../assets/images/logo cx.png";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
@@ -21,12 +21,12 @@ export default function Contact() {
                                 className="h-12 w-auto"
                             />
                             <p className="text-slate-700 text-xs sm:text-sm hover:text-blue-700 font-bold" >
-                                CHIT FUND PVT LTD
+                                ChitXpert
                             </p>
                         </div>
 
                         <p className="flex items-center gap-2 text-gray-700 mb-2 font-semibold">
-                            <Mail size={18} /> info.mychits@gmail.com
+                            <Mail size={18} /> info.chitXpert@gmail.com
                         </p>
 
                         <p className="flex items-center gap-2 text-gray-700 mb-4 font-semibold">
@@ -117,14 +117,14 @@ export default function Contact() {
 
                         <div className="flex justify-center sm:justify-start gap-3 sm:gap-4">
                             <a
-                                href="https://www.facebook.com/Mychitfund"
+                                href="https://www.facebook.com/people/Chit-Xpert/pfbid0LPAu2EqGJH3g2gfV4bV3TJKx2HJAYa5RUZTn8QZj6eVKopH3bhXndnnTznrwUHrol/"
                                 className="bg-blue-500 p-2 sm:p-3 rounded-full transition hover:scale-110"
                             >
                                 <Facebook className="text-white w-4 h-4 sm:w-5 sm:h-5" />
                             </a>
 
                             <a
-                                href="https://www.instagram.com/my_chits/"
+                                href="https://www.instagram.com/chitxpert/"
                                 className="bg-yellow-400 p-2 sm:p-3 rounded-full transition hover:scale-110"
                                 style={{
                                     background:

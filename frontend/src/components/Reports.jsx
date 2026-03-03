@@ -26,7 +26,7 @@ function Reports() {
         {/* HEADER */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-            Complete Reporting Suite <span className="font-bold text-blue-700">Powerful Reports</span> <span></span>
+            Complete Reporting Suite <span className="font-bold text-teal-600">Powerful Reports</span> <span></span>
               for Smart Decisions
           </h2>
           <p className="mt-4 text-gray-600 max-w-3xl font-semibold mx-auto">
@@ -51,7 +51,7 @@ function Reports() {
 
           {/* CONTENT */}
           <div>
-            <h3 className="text-2xl font-bold text-blue-700 mb-6">
+            <h3 className="text-2xl font-bold text-teal-600 mb-6">
               One Dashboard. All Business Insights.
             </h3>
 
@@ -65,7 +65,7 @@ function Reports() {
 
             <a
               href="/signup"
-              className="inline-block mt-8 bg-blue-500 text-white px-6 py-3 font-semibold rounded-md hover:bg-blue-700 transition"
+              className="inline-block mt-8 bg-teal-500 text-white px-6 py-3 font-semibold rounded-md hover:bg-teal-700 transition"
             >
               Explore Reports
             </a>
@@ -134,9 +134,9 @@ function Reports() {
 /* CARD COMPONENT */
 function ReportCard({ icon, title, desc }) {
   return (
-    <div className="bg-slate-50 rounded-xl shadow-md p-6 border border-transparent hover:bg-blue-50
-      hover:border-blue-400 hover:shadow-xl hover:-translate-y-1 transition-all">
-      <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-white text-blue-600 mb-4">
+    <div className="bg-slate-50 rounded-xl shadow-md p-6 border border-transparent hover:bg-beal-100
+      hover:border-teal-400 hover:shadow-xl hover:-translate-y-1 transition-all">
+      <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-white text-teal-600 mb-4">
         {icon}
       </div>
       <h4 className="text-lg font-semibold mb-2">{title}</h4>
