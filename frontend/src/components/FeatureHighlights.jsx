@@ -115,7 +115,7 @@ function FeatureCard({ feature }) {
         <Icon size={28} className="text-teal-600" />
       </div>
       <h3 className="font-bold text-gray-800">{feature.title}</h3>
-      <p className="text-sm text-gray-500 mt-1">{feature.subtitle}</p>
+      <p className="text-sm text-gray-500 mt-1">{feature.subtitle}</p>   
     </div>
   );
 }
