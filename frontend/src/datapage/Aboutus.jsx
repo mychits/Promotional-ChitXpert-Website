@@ -17,7 +17,7 @@ import Familyimg from "../assets/images/family.png"
 
 
 const AboutUs = () => {
-  // Team members data
+
   const teamMembers = [
     {
       name: "LAKSHMI",
@@ -45,7 +45,7 @@ const AboutUs = () => {
     }
   ];
 
-  // Values data
+
   const values = [
     {
       icon: <Shield className="w-8 h-8 text-blue-600" />,
@@ -69,7 +69,7 @@ const AboutUs = () => {
     }
   ];
 
-  // Impact data
+
   const impactStats = [
     { value: "500,000+", label: "Chit Fund Members", color: "bg-blue-100 text-blue-800" },
     { value: "50,000+", label: "Transactions Processed", color: "bg-green-100 text-green-800" },
@@ -77,7 +77,7 @@ const AboutUs = () => {
     { value: "99.9%", label: "Uptime", color: "bg-amber-100 text-amber-800" }
   ];
 
-  // Trust signals data
+
   const trustSignals = [
     {
       icon: <Award className="w-6 h-6 text-yellow-500" />,
@@ -103,7 +103,7 @@ const AboutUs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
+    
     alert("Message sent successfully!");
   };
 
@@ -111,9 +111,7 @@ const AboutUs = () => {
    
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
        <Navbar/>
-      {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-blue-600 to-indigo-700 py-20 overflow-hidden">
-        {/* Simple SVG Pattern Overlay */}
+      <div className="relative bg-gradient-to-r from-teal-500 to-cyan-600 py-20 overflow-hidden">
         <div className="absolute inset-0 opacity-10" style={{
           backgroundImage: {Familyimg}
         }}></div>
@@ -128,11 +126,11 @@ const AboutUs = () => {
         </div>
       </div>
 
-      {/* Our Story Section */}
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="relative rounded-2xl overflow-hidden shadow-2xl group">
-            {/* Fixed aspect ratio using standard class */}
+    
             <div className="aspect-video w-full">
               <img 
                 src={Familyimg} 
@@ -140,7 +138,7 @@ const AboutUs = () => {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-blue-900/90 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-cyan-600/90 to-transparent"></div>
             <div className="absolute bottom-0 left-0 right-0 p-6">
               <h3 className="text-white text-2xl font-bold mb-2">Building a Better Financial Future</h3>
               <p className="text-blue-100">Our team in action, developing the next generation of chit fund software</p>
@@ -164,7 +162,6 @@ const AboutUs = () => {
         </div>
       </div>
 
-      {/* Mission & Vision */}
       <div className="bg-gradient-to-br from-blue-50 to-indigo-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -208,7 +205,7 @@ const AboutUs = () => {
         </div>
       </div>
 
-      {/* Our Values */}
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Values</h2>
@@ -231,7 +228,7 @@ const AboutUs = () => {
         </div>
       </div>
 
-      {/* Our Team */}
+
       <div className="bg-gradient-to-br from-indigo-50 to-blue-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -245,7 +242,7 @@ const AboutUs = () => {
             {teamMembers.map((member, index) => (
               <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition-shadow duration-300">
                 <div className="relative group">
-                  {/* Fixed aspect ratio using standard class */}
+         
                   <div className="aspect-square w-full overflow-hidden">
                     <img 
                       src={member.image} 
@@ -268,7 +265,7 @@ const AboutUs = () => {
         </div>
       </div>
 
-      {/* Impact Section */}
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Impact</h2>
@@ -372,7 +369,7 @@ const AboutUs = () => {
       </div>
 
       {/* Footer CTA */}
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-700 py-12">
+      <div className="bg-gradient-to-r from-teal-600 to-cyan-700 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Ready to Transform Your Chit Fund Business?</h2>
           <p className="text-blue-100 text-lg max-w-2xl mx-auto mb-8">

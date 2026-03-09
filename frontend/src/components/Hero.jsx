@@ -132,7 +132,7 @@ export default function Hero() {
 
             {/* Main Image Container */}
             <div className="relative group">
-  
+
               {/* Image with Shadow and Hover Effect */}
               <div className="relative transform group-hover:scale-105 transition-all duration-700 ease-out">
                 <img
@@ -143,18 +143,29 @@ export default function Hero() {
               </div>
 
               {/* Floating Stats Card - Moved to LEFT SIDE */}
-              <div className="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-sm rounded-xl shadow-2xl p-4 border border-teal-100 min-w-[200px]"
-                style={{ animation: 'float 3s ease-in-out infinite' }}>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center shadow-lg">
-                    <Zap className="w-5 h-5 text-white" />
+              <div
+                className="
+  absolute 
+  bottom-2 left-2
+  sm:-bottom-6 sm:-left-6
+  bg-white/95 backdrop-blur-sm
+  rounded-xl shadow-2xl
+  p-3 sm:p-4
+  border border-teal-100
+  min-w-[160px] sm:min-w-[200px]
+  "
+                style={{ animation: "float 3s ease-in-out infinite" }}
+              >
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center shadow-lg">
+                    <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                   </div>
+
                   <div>
-                    <p className="text-xs text-gray-500 flex items-center gap-1">
-                      <span>Processing</span>
-                    </p>
-                    <p className="text-lg font-bold text-gray-800">₹50L+</p>
-                    <p className="text-xs text-green-600 flex items-center gap-1">
+                    <p className="text-[10px] sm:text-xs text-gray-500">Processing</p>
+                    <p className="text-base sm:text-lg font-bold text-gray-800">₹50L+</p>
+
+                    <p className="text-[10px] sm:text-xs text-green-600 flex items-center gap-1">
                       <TrendingUp className="w-3 h-3" />
                       ↑ 28% this month
                     </p>
@@ -163,8 +174,19 @@ export default function Hero() {
               </div>
 
               {/* Floating User Card - Moved to LEFT SIDE (UPPER) */}
-              <div className="absolute -top-6 -left-6 bg-white/95 backdrop-blur-sm rounded-xl shadow-2xl p-4 border border-cyan-100 min-w-[220px]"
-                style={{ animation: 'float 3s ease-in-out 0.3s infinite' }}>
+              <div
+                className="
+  absolute
+  top-2 left-2
+  sm:-top-6 sm:-left-6
+  bg-white/95 backdrop-blur-sm
+  rounded-xl shadow-2xl
+  p-3 sm:p-4
+  border border-cyan-100
+  min-w-[180px] sm:min-w-[220px]
+  "
+                style={{ animation: "float 3s ease-in-out 0.3s infinite" }}
+              >
 
                 {/* Header with Users */}
                 <div className="flex items-center gap-2 mb-2">

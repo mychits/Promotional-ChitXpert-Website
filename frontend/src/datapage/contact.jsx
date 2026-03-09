@@ -67,11 +67,11 @@ const ContactPage = () => {
     };
 
     return (
-        <div className="min-h-screen bg-blue-50  ">
+        <div className="min-h-screen bg-blue-50 ">
             <Navbar/>
-            <div className="max-w-7xl mx-auto mb-4">
+            <div className="max-w-7xl mx-auto mb-10 pb-10">
                 {/* Page Title */}
-                <div className="text-center mb-12">
+                <div className="text-center mb-12 pb-10 pt-10">
                     <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get in Touch</h1>
                     <div className="w-16 h-1 bg-yellow-500 mx-auto"></div>
                 </div>
@@ -81,7 +81,7 @@ const ContactPage = () => {
                     {/* Left Side - Contact Information */}
                     {/* Left Side - Contact Information */}
                     <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-                        <div className="bg-gradient-to-br from-blue-600 to-indigo-700 p-8 h-full flex flex-col">
+                        <div className="bg-gradient-to-br from-teal-600 to-cyan-700 p-8 h-full flex flex-col">
 
                             {/* Address */}
                             <div className="flex items-start mb-6">
@@ -244,7 +244,7 @@ const ContactPage = () => {
                             {/* Submit Button */}
                             <button
                                 type="submit"
-                                className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-bold py-3 px-6 rounded-lg text-lg hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
+                                className="w-full bg-gradient-to-r from-teal-400 to-cyan-500 text-white font-bold py-3 px-6 rounded-lg text-lg hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
                             >
                                 Send Message
                             </button>

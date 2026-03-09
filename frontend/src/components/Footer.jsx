@@ -209,12 +209,7 @@ export default function Footer() {
                 <Twitter className="text-white w-5 h-5" />
               </a>
               
-              <a
-                href="#"
-                className="w-10 h-10 rounded-lg bg-[#0A66C2] flex items-center justify-center hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-[#0A66C2]/30"
-              >
-                <Linkedin className="text-white w-5 h-5" />
-              </a>
+             
             </div>
 
             {/* Newsletter Signup */}
