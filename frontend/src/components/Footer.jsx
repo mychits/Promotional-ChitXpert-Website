@@ -1,20 +1,20 @@
 import React from "react";
-import { 
-  Facebook, 
-  Twitter, 
-  Linkedin, 
-  Instagram, 
+import {
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
   Youtube,
-  Mail, 
-  Phone, 
+  Mail,
+  Phone,
   MapPin,
   ArrowRight,
   ChevronRight,
   Heart,
-  Code
+  Code,
 } from "lucide-react";
-import { Link ,NavLink} from "react-router-dom";
-import logo from"../assets/images/logo cx.png";
+import { Link, NavLink } from "react-router-dom";
+import logo from "../assets/images/logo cx.png";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -23,19 +23,22 @@ export default function Footer() {
     <footer className="bg-gradient-to-br from-gray-900 to-gray-800 text-white pt-16 pb-8 relative overflow-hidden">
       {/* Decorative top border */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-teal-400 via-cyan-400 to-teal-400"></div>
-      
+
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: "radial-gradient(circle at 2px 2px, white 1px, transparent 0)",
-          backgroundSize: "40px 40px"
-        }}></div>
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 2px 2px, white 1px, transparent 0)",
+            backgroundSize: "40px 40px",
+          }}
+        ></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-
           {/* Column 1 - LOGO + CONTACT INFO */}
           <div className="space-y-6">
             <div className="flex items-center gap-3 group">
@@ -53,8 +56,7 @@ export default function Footer() {
             </div>
 
             <p className="text-gray-300 leading-relaxed text-sm">
-              Empowering chit fund businesses with cutting-edge technology. 
-              Secure, transparent, and efficient management solutions for the modern era.
+              Smart Financial Chit Management Software....
             </p>
 
             <div className="space-y-3">
@@ -69,22 +71,37 @@ export default function Footer() {
                 <div className="p-2 bg-gray-800 rounded-lg group-hover:bg-cyan-500/20 transition-colors">
                   <Phone size={16} className="text-cyan-400" />
                 </div>
-                <span className="text-sm">+91 94839 00777 / 76698 65563</span>
+                <span className="text-sm">+91 98453 44717 / 94484 88955</span>
               </p>
             </div>
 
             {/* App Store Badges */}
-            <div className="flex gap-3 pt-2">
-              <img 
-                src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" 
-                alt="App Store"
-                className="h-10 cursor-pointer hover:opacity-80 transition-opacity bg-white rounded-lg p-1"
-              />
-              <img 
-                src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" 
-                alt="Google Play"
-                className="h-10 cursor-pointer hover:opacity-80 transition-opacity"
-              />
+            <div className="flex items-center gap-4 pt-2">
+              {/* App Store */}
+              <a
+                href="https://apps.apple.com/in/app/mychits/id6761298273"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                  alt="App Store"
+                  className="h-11 object-contain cursor-pointer hover:opacity-80 transition-opacity"
+                />
+              </a>
+
+              {/* Google Play */}
+              <a
+                href="https://play.google.com/store/search?q=mychits&c=apps&hl=en_IN"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                  alt="Google Play"
+                  className="h-16 object-contain cursor-pointer hover:opacity-80 transition-opacity"
+                />
+              </a>
             </div>
           </div>
 
@@ -98,9 +115,13 @@ export default function Footer() {
               {[
                 { to: "/features", label: "Features" },
                 { to: "/signup", label: "Free Trial" },
-                { to: "/#action", label: "Auction & Bid Handling", isHash: true },
+                {
+                  to: "/#action",
+                  label: "Auction & Bid Handling",
+                  isHash: true,
+                },
                 { to: "/report", label: "Reports & Analytics" },
-                { to: "/security", label: "Security & Compliance" }
+                { to: "/security", label: "Security & Compliance" },
               ].map((item, index) => (
                 <li key={index}>
                   {item.isHash ? (
@@ -115,17 +136,21 @@ export default function Footer() {
                       className="text-gray-300 hover:text-teal-400 transition-colors flex items-center gap-2 group"
                     >
                       <ChevronRight className="w-4 h-4 text-teal-400 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      <span className="group-hover:translate-x-1 transition-transform text-sm">{item.label}</span>
+                      <span className="group-hover:translate-x-1 transition-transform text-sm">
+                        {item.label}
+                      </span>
                     </NavLink>
                   ) : (
-                    <NavLink 
+                    <NavLink
                       to={item.to}
                       className={({ isActive }) =>
                         `text-gray-300 hover:text-teal-400 transition-colors flex items-center gap-2 group ${isActive ? "text-teal-400" : ""}`
                       }
                     >
                       <ChevronRight className="w-4 h-4 text-teal-400 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      <span className="group-hover:translate-x-1 transition-transform text-sm">{item.label}</span>
+                      <span className="group-hover:translate-x-1 transition-transform text-sm">
+                        {item.label}
+                      </span>
                     </NavLink>
                   )}
                 </li>
@@ -145,15 +170,17 @@ export default function Footer() {
                 { href: "/contact", label: "Contact" },
                 { href: "/Help&support", label: "Help & Support" },
                 { href: "/privacy", label: "Privacy & Policy" },
-                { href: "/termcondition", label: "Terms & Conditions" }
+                { href: "/termcondition", label: "Terms & Conditions" },
               ].map((item, index) => (
                 <li key={index}>
-                  <a 
-                    href={item.href} 
+                  <a
+                    href={item.href}
                     className="text-gray-300 hover:text-cyan-400 transition-colors flex items-center gap-2 group"
                   >
                     <ChevronRight className="w-4 h-4 text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <span className="group-hover:translate-x-1 transition-transform text-sm">{item.label}</span>
+                    <span className="group-hover:translate-x-1 transition-transform text-sm">
+                      {item.label}
+                    </span>
                   </a>
                 </li>
               ))}
@@ -166,7 +193,7 @@ export default function Footer() {
               Follow Us
               <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-teal-400 to-cyan-400"></span>
             </h4>
-            
+
             <p className="text-gray-300 mb-4 text-sm">
               Stay connected with us on social media for updates and news.
             </p>
@@ -187,7 +214,8 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg"
                 style={{
-                  background: "linear-gradient(45deg, #FEDA75, #FA7E1E, #D62976, #962FBF, #4F5BD5)",
+                  background:
+                    "linear-gradient(45deg, #FEDA75, #FA7E1E, #D62976, #962FBF, #4F5BD5)",
                 }}
               >
                 <Instagram className="text-white w-5 h-5" />
@@ -208,16 +236,16 @@ export default function Footer() {
               >
                 <Twitter className="text-white w-5 h-5" />
               </a>
-              
-             
             </div>
 
             {/* Newsletter Signup */}
             <div className="mt-6">
-              <p className="text-sm text-gray-400 mb-2">Subscribe to our newsletter</p>
+              <p className="text-sm text-gray-400 mb-2">
+                Subscribe to our newsletter
+              </p>
               <div className="flex">
-                <input 
-                  type="email" 
+                <input
+                  type="email"
                   placeholder="Your email"
                   className="flex-1 px-4 py-2.5 bg-gray-700 text-white rounded-l-lg focus:outline-none focus:ring-2 focus:ring-teal-400 text-sm"
                 />
@@ -232,19 +260,27 @@ export default function Footer() {
         {/* Bottom Bar - COMPANY INFORMATION */}
         <div className="border-t border-gray-700 pt-8 mt-8">
           <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
-            
             {/* Copyright */}
             <p className="text-sm text-gray-400 order-2 lg:order-1">
-              © {currentYear} <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-400">chitXpert</span>. 
-              All rights reserved. 
+              © {currentYear}{" "}
+              <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-400">
+                chitXpert
+              </span>
+              . All rights reserved.
               <span className="mx-2 text-gray-600">|</span>
-              Made with <Heart className="w-3 h-3 inline text-red-500 mx-0.5" /> in India
+              Made with <Heart className="w-3 h-3 inline text-red-500 mx-0.5" />{" "}
+              in India
             </p>
 
             {/* CIN and Address */}
             <div className="text-center text-xs text-gray-500 max-w-2xl order-1 lg:order-2">
-              <p>VIJAYA VINAYAK CHITFUNDS PRIVATE LIMITED | CIN: U65999KA2022PTC161858</p>
-              <p className="mt-1">No 11/36-25, 2nd Main, Kathriguppe Main Road, Bangalore - 560070</p>
+              <p>
+                VIJAYA VINAYAK CHITFUNDS PRIVATE LIMITED | CIN:
+                U65999KA2022PTC161858
+              </p>
+              <p className="mt-1">
+                No 11/36-25, 2nd Main, Kathriguppe Main Road, Bangalore - 560070
+              </p>
             </div>
 
             {/* Developed by */}
@@ -252,7 +288,9 @@ export default function Footer() {
               <p className="text-sm text-gray-400 flex items-center gap-2">
                 <Code className="w-4 h-4 text-teal-400" />
                 <span>Designed & Developed by</span>
-                <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-400">Sanjay</span>
+                <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-400">
+                  Sanjay
+                </span>
               </p>
             </div>
           </div>
@@ -260,28 +298,27 @@ export default function Footer() {
           {/* Payment Partners */}
           <div className="mt-8 pt-6 border-t border-gray-700">
             <div className="flex flex-wrap justify-center items-center gap-6">
-              <span className="text-sm text-gray-400 font-medium">Trusted Payment Partners:</span>
-              
+              <span className="text-sm text-gray-400 font-medium">
+                Trusted Payment Partners:
+              </span>
+
               {/* Razorpay - White Background */}
               <div className="bg-white rounded-lg px-4 py-2 hover:scale-110 transition-transform duration-300 shadow-lg">
-                <img 
-                  src="https://razorpay.com/assets/razorpay-logo.svg" 
-                  alt="Razorpay" 
+                <img
+                  src="https://razorpay.com/assets/razorpay-logo.svg"
+                  alt="Razorpay"
                   className="h-6 w-auto"
                 />
               </div>
-              
+
               {/* Cashfree - White Background */}
               <div className="bg-white rounded-lg px-4 py-2 hover:scale-110 transition-transform duration-300 shadow-lg">
-                <img 
-                  src="https://cashfreelogo.cashfree.com/website/landings/homepage/cashfree10Logo.svg" 
-                  alt="Cashfree" 
+                <img
+                  src="https://cashfreelogo.cashfree.com/website/landings/homepage/cashfree10Logo.svg"
+                  alt="Cashfree"
                   className="h-6 w-25"
                 />
               </div>
-              
-              
-             
             </div>
           </div>
 

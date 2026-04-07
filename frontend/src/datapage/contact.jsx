@@ -94,10 +94,12 @@ const ContactPage = () => {
                                 <div>
                                     <h3 className="text-lg font-semibold text-white mb-2">Our Location</h3>
                                     <p className="text-blue-100 text-sm leading-relaxed">
-                                        MyChits Pvt. Ltd.<br />
-                                        Near Sathyanarayana Arch,<br />
+                                        ChitXpert<br />
+                                        No 11/36-25, 2nd Floor, 2nd Main,<br />
+                                        Kathriguppe Main Road,<br />
                                         Banashankari 3rd Stage,<br />
-                                        Bangalore, 560085<br />India
+                                        Bangalore, Karnataka - 560085<br />
+                                        India
                                     </p>
                                 </div>
                             </div>
@@ -111,7 +113,7 @@ const ContactPage = () => {
                                 </div>
                                 <div>
                                     <h3 className="text-lg font-semibold text-white mb-2">Email Us</h3>
-                                    <p className="text-blue-100">info.mychits@gmail.com</p>
+                                    <p className="text-blue-100">info.chitXpert@gmail.com</p>
                                 </div>
                             </div>
 
@@ -124,7 +126,7 @@ const ContactPage = () => {
                                 </div>
                                 <div>
                                     <h3 className="text-lg font-semibold text-white mb-2">Call Us</h3>
-                                    <p className="text-blue-100">+91 9483900777 / 7669865563</p>
+                                    <p className="text-blue-100">+91 9845344717 / 9448488955</p>
                                     <p className="text-blue-200 text-sm">Mon-Fri from 9am to 6pm</p>
                                 </div>
                             </div>
