@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import expertImg from "../assets/images/PNG DOWN.png";
+import expertImg from "../assets/images/ChitxpertAPP.png";
 
 const ScrollingPopup = () => {
     const [showPopup, setShowPopup] = useState(false);
